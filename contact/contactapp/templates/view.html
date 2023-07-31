@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/cstyle.css">
+    <style>
+ 
+
+    </style>
+</head>
+<body> 
+      <center>
+   <h1 id="cont" >CONTACTS</h1></center>
+    <center>
+
+      <!-- <div class="container"> -->
+       
+        
+        <table class="table table-bordered border-primary"  style="width: 80%; margin-left: 10%; margin-right: 10%;" >
+            <thead style="color: aqua;">
+                <tr>
+                  <th >s. no</th>
+                  <th >First</th>
+                  <th >Last</th>
+                  <th >phone</th>
+                  <th>Edit/delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in data %}
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{i.fname}}</td>
+                  <td>{{i.lname}}</td>
+                  <td>{{i.phone}}</td>
+                  <td><a href="{% url 'edit' i.id %}">EDIT</a> 
+                  <a href="{% url 'delete' i.id %}">DELETE</a></td>
+                </tr>
+                
+                
+              </tbody>
+              {% endfor %}
+            <!-- </table> -->
+        </table>
+      <!-- </div>
+      </div> -->
+    </center>
+</body>
+</html>

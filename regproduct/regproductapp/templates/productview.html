@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/st.css">
+</head>
+<body>
+    
+
+
+
+
+
+<table>
+    <caption>PRODUCTS INFO</caption>
+    <thead>
+      <tr>
+        <th scope="col">productname</th>
+        <th scope="col">productid </th>
+        <th scope="col">category</th>
+        <th scope="col">price</th>
+        <th scope="col">ED</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+      <tr>
+        <td data-label="productname">{{i.ppname}}</td>
+        <td data-label="productid">{{i.pid}}</td>
+        <td data-label="category">{{i.pcat}}</td>
+        <td data-label="price">{{i.pprice}}</td>
+       
+        <td data-label="Period"><a  href="{% url 'editp' i.id %}">EDIT</a>  <a href="{% url 'deletep' i.id %}">DELETE</a></td>
+      </tr>
+    
+    </tbody>
+    {% endfor %}
+  </table>
+
+
+</body>
+</html>

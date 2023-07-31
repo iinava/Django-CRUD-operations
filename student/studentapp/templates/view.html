@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Responsive Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 	<link rel="stylesheet" href="assets/css/style.css"> -->
+  <link rel="stylesheet" href="../static/style2.css">
+</head>
+
+<table class="table">
+  <thead>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>parent</th>
+    <th>contact</th>
+    <th>pincode</th>
+    <th>email</th>
+    <th>adress</th>
+    <th>ED</th>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td data-label="S.No">{{forloop.counter}}</td>
+      <td data-label="Name">{{i.name}}</td>
+      <td data-label="parent">{{i.parent}}</td>
+      <td data-label="contact">{{i.contact}}</td>
+      <td data-label="pincode">{{i.pincode}}</td>
+      <td data-label="email">{{i.email}}</td>
+      <td data-label="adress">{{i.adress}}</td>
+      <td data-label="ED"><a href="{% url 'edit' i.id %}">EDIT</a>   <a href="{% url 'delete' i.id %}">DELETE</a></td>
+
+
+    </tr>
+
+    <!-- <tr>
+     
+        <td data-label="S.No">1</td>
+        <td data-label="Name">Dinesh</td>
+        <td data-label="parent">34</td>
+        <td data-label="contact">50%</td>
+        <td data-label="pincode">Passed</td>
+        <td data-label="email">djfbsdjf</td>
+        <td data-label="adress">newyork</td>
+    </tr>
+
+    <tr>
+   
+        <td data-label="S.No">1</td>
+        <td data-label="Name">Dinesh</td>
+        <td data-label="parent">34</td>
+        <td data-label="contact">50%</td>
+        <td data-label="pincode">Passed</td>
+        <td data-label="email">djfbsdjf</td>
+        <td data-label="adress">newyork</td>
+
+    <tr>
+   
+        <td data-label="S.No">1</td>
+        <td data-label="Name">Dinesh</td>
+        <td data-label="parent">34</td>
+        <td data-label="contact">50%</td>
+        <td data-label="pincode">Passed</td>
+        <td data-label="email">djfbsdjf</td>
+        <td data-label="adress">newyork</td>
+    </tr> -->
+  </tbody>
+  {% endfor %}
+</table>
+
+</body>
+
+</html>

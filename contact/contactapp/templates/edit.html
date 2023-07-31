@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/cstyle.css">
+   
+    
+</head>
+<body>
+
+    <center><h1>EDIT CONTACT INFO</h1></center>
+    <center>
+
+
+    
+        <div class="form">
+            <form action="{% url 'editdata' Data.id %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <label for="f_name">First name:</label>
+                        <input class="form-control" type="text" id="f_name" name="f_name"  value="{{Data.fname}}">
+                    </div>
+                    <div class="col">
+                        <label for="l_name">Last name:</label>
+                        <input class="form-control" type="text" id="l_name" name="l_name" value="{{Data.lname}}">
+                    </div>
+                    <div class="col">
+                        <label for="email"> phone number:</label>
+                        <input class="form-control" type="number" id="phone" name="phone"  value="{{Data.phone}}">
+                    </div>
+                    <div class="col">
+                        <label for="pass"></label>  
+                               
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <button class="btn5" type="submit">Join</button>
+            </form>
+        </div>
+
+    </center>
+</body>
+</html>

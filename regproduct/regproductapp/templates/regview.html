@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/st.css">
+</head>
+<body>
+    
+
+
+
+
+
+<table>
+    <caption>ACCOUNTS INFO</caption>
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">username </th>
+        <th scope="col">email</th>
+        <th scope="col">contact</th>
+        <th scope="col">password</th>
+        <th scope="col">ED</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+      <tr>
+        <td data-label="name">{{i.name}}</td>
+        <td data-label="username">{{i.username}}</td>
+        <td data-label="email">{{i.email}}</td>
+        <td data-label="contact">{{i.contact}}</td>
+        <td data-label="password">{{i.password}}</td>
+        <td data-label="ED"><a href="{% url 'editr' i.id %}">EDIT</a>  <a href="{% url 'deleter' i.id %}">DELETE</a></td>
+      </tr>
+    
+    </tbody>
+    {% endfor %}
+  </table>
+
+
+</body>
+</html>

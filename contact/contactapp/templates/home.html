@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/cstyle.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+              
+                <ul>
+                    
+                    <li><a href='{% url "index"%}'>Home</a></li>
+                    <!-- <li><a href="#">Edit</a></li> -->
+                    <li><a href='{% url "view"%}'>View</a></li>
+                  
+                    
+                </ul>
+            
+    
+            </nav>
+
+
+    <!-- ------form------------ -->
+    <center>
+       
+        <div class="form">
+            <form   action="{% url 'savedata' %}" method="post">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col">
+                        <label for="f_name">First name:</label>
+                        <input class="form-control" type="text" id="f_name" name="f_name">
+                    </div>
+                    <div class="col">
+                        <label for="l_name">Last name:</label>
+                        <input class="form-control" type="text" id="l_name" name="l_name">
+                    </div>
+                    <div class="col">
+                        <label for="email"> phone number:</label>
+                        <input class="form-control" type="number" id="phone" name="phone">
+                    </div>
+                    <div class="col">
+                        <label for="pass"></label>  
+                               
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <input type="submit" class="btn5">
+            </form>
+        </div>
+</center>
+</body>
+</html>
